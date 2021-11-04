@@ -22,13 +22,13 @@ function App() {
           onChange={firstNameHandle}
           name="fName"
           placeholder="First Name"
-          // value={firstName}
+          value={firstName}
         />
         <input
           onChange={lastNameHandle}
           name="lName"
           placeholder="Last Name"
-          // value={lastName}
+          value={lastName}
         />
         <button>Submit</button>
       </form>
