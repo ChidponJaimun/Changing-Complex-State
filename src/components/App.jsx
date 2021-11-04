@@ -7,20 +7,19 @@ function App() {
   });
 
   function updateName(event) {
-    const newValue = event.target.value;
-    const inputName = event.target.name;
+    const { value, name } = event.target;
 
-    //// --I think this is better--
+    // // --I think this is better--
     // if (inputName === "fName") {
     //   setFullName({ firstName: newValue, lastName: fullName.lastName });
     // } else if (inputName === "lName") {
     //   setFullName({ firstName: fullName.firstName, lastName: newValue });
     // }
     setFullName((prevValue) => {
-      if (inputName === "fName") {
-        return { firstName: newValue, lastName: prevValue.lastName };
-      } else if (inputName === "lName") {
-        return { firstName: prevValue.firstName, lastName: newValue };
+      if (name === "fName") {
+        return { firstName: value, lastName: prevValue.lastName };
+      } else if (name === "lName") {
+        return { firstName: prevValue.firstName, lastName: value };
       }
     });
   }
