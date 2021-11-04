@@ -10,11 +10,19 @@ function App() {
     const newValue = event.target.value;
     const inputName = event.target.name;
 
-    if (inputName === "fName") {
-      setFullName({ firstName: newValue, lastName: fullName.lastName });
-    } else if (inputName === "lName") {
-      setFullName({ firstName: fullName.firstName, lastName: newValue });
-    }
+    //// --I think this is better--
+    // if (inputName === "fName") {
+    //   setFullName({ firstName: newValue, lastName: fullName.lastName });
+    // } else if (inputName === "lName") {
+    //   setFullName({ firstName: fullName.firstName, lastName: newValue });
+    // }
+    setFullName((prevValue) => {
+      if (inputName === "fName") {
+        return { firstName: newValue, lastName: prevValue.lastName };
+      } else if (inputName === "lName") {
+        return { firstName: prevValue.firstName, lastName: newValue };
+      }
+    });
   }
 
   return (
