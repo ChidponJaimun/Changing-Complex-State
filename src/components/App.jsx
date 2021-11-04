@@ -9,8 +9,12 @@ function App() {
   function updateName(event) {
     const newValue = event.target.value;
     const inputName = event.target.name;
-    console.log(newValue);
-    console.log(inputName);
+
+    if (inputName === "fname") {
+      setFullName({ firstName: newValue });
+    } else {
+      setFullName({ lastName: newValue });
+    }
   }
 
   return (
